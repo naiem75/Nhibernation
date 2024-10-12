@@ -7,14 +7,14 @@ namespace Studentsmanage
     {
         public StudentMap()
         {
-            Table("student");  // The table name in SQL Server
+            Table("student");  
 
-            Id(x => x.ID).Column("ID").GeneratedBy.Assigned();  // Primary key, using identity (auto-increment)
+            Id(x => x.ID).Column("ID").GeneratedBy.Assigned();  
 
-            Map(x => x.First_Name).Column("First_Name");  // Map 'FirstName' to 'First_Name' column
-            Map(x => x.Last_Name).Column("Last_Name");    // Map 'LastName' to 'Last_Name' column
-            Map(x => x.age).Column("age");               // Map 'Age' to 'age' column
-            Map(x => x.department).Column("department"); // Map 'Department' to 'department' column
+            Map(x => x.First_Name).Column("First_Name");  
+            Map(x => x.Last_Name).Column("Last_Name");    
+            Map(x => x.age).Column("age");               
+            Map(x => x.department).Column("department"); 
         }
     }
 }

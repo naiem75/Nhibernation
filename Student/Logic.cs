@@ -21,18 +21,28 @@ namespace Studentsmanage
                 .BuildSessionFactory();
 
             using (var session = sessionFactory.OpenSession())
+
             {
+
+                var student = new Student();
+                Console.WriteLine("Enter ID");
+                student.ID = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter First Name:");
+                student.First_Name = Console.ReadLine();
+                Console.WriteLine("Enter Last Name:");
+                student.Last_Name = Console.ReadLine();
+
+                Console.WriteLine("Enter Age:");
+                student.age = int.Parse(Console.ReadLine());
+
+                Console.WriteLine("Enter Department:");
+                student.department = Console.ReadLine();
+
+
                 using (var transaction = session.BeginTransaction())
                 {
-                    var student = new Student
-                    {
-                        ID = 4,
-                        First_Name = "rasel",
-                        Last_Name = "mahmud",
-                        age = 22,
-                        department = "Computer Science"
-                       
-                    };
+                    
+                    
 
                     session.Save(student);
 
